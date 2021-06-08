@@ -1,7 +1,24 @@
-## Frappe Apps
+# Frappe Apps Development
+[1. Basic Usage (Frappe Bench)](#basic-usage)
 
-Sample Applications Development
+<br>
 
-#### License
+<a name="basic-usage"/>
 
-MIT
+## 1. Basic Usage (Frappe Bench)
+```shell
+# Create New Frappe App / Get Existing Frappe App
+bench new-app     <APP_NAME>
+bench get-app     <GIT_URL>
+
+# Install Frapp App to Frapp Site
+bench --site      <SITE_NAME>           \
+      install-app <APP_NAME>
+      
+# Frappe DB Backup / Restore
+bench --site      <SITE_NAME>           \
+      backup  --backup-path <ABS_PATH>  \
+
+bench --site      <SITE_NAME>           \
+      restore     <BACKUP_DB_GZ_FILE>
+```
