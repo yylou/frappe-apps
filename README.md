@@ -1,7 +1,7 @@
 # Frappe Apps Development
 [Basic Usage (Frappe Bench)](#basic-usage)  
-[Web Form and DocType](#web-form)  
-[Custom Web Form](#custom-web-form)
+[WebForm and DocType](#web-form)  
+[Custom WebForm](#custom-web-form)
 
 
 <br>
@@ -30,7 +30,7 @@ bench --site      <SITE_NAME>           \
 
 <a name="web-form"/>
 
-## Web Form and DocType
+## WebForm and DocType
 (Related settings could be referred to this repository)
 ```INI
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
@@ -38,13 +38,15 @@ bench --site      <SITE_NAME>           \
 [Type]
 DocType = Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
 WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
+[Permission]
+DocType = Guest: Read, Write
 ```
 1. Create **Module** under your Frapp app
 2. Create **DocType** to store web form data under the related module
-3. Create **Web Form** linked with the created DocType and Module above
+3. Create **WebForm** linked with the created DocType and Module above
 
 <br>
 
 <a name="custom-web-form"/>
 
-## Custom Web Form
+## Custom WebForm
