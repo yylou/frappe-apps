@@ -1,6 +1,7 @@
 # Frappe Apps Development
 [Basic Usage (Frappe Bench)](#basic-usage)  
-[Web Form and DocType](#web-form)
+[Web Form and DocType](#web-form)  
+[Custom Web Form](#custom-web-form)
 
 
 <br>
@@ -25,6 +26,8 @@ bench --site      <SITE_NAME>           \
       restore     <BACKUP_DB_GZ_FILE>
 ```
 
+<br>
+
 <a name="web-form"/>
 
 ## Web Form and DocType
@@ -39,3 +42,9 @@ WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
 1. Create **Module** under your Frapp app
 2. Create **DocType** to store web form data under the related module
 3. Create **Web Form** linked with the created DocType and Module above
+
+<br>
+
+<a name="custom-web-form"/>
+
+## Custom Web Form
