@@ -35,9 +35,11 @@ bench --site      <SITE_NAME>           \
 ```INI
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
 [Module] web-form            (Folder: frappe_apps/web_form)
+
 [Type]
 DocType = Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
 WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
+
 [Permission]
 DocType = Guest: Read, Write
 ```
