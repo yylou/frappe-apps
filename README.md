@@ -29,6 +29,13 @@ bench --site      <SITE_NAME>           \
 
 ## Web Form and DocType
 (Related settings could be referred to this repository)
+```INI
+# Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
+[Module] web-form            (Folder: frappe_apps/web_form)
+[Type]
+DocType = Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
+WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
+```
 1. Create **Module** under your Frapp app
 2. Create **DocType** to store web form data under the related module
 3. Create **Web Form** linked with the created DocType and Module above
