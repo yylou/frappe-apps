@@ -41,11 +41,18 @@ DocType = Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data
 WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
 
 [Permission]
-DocType = Guest: Read, Write
+DocType = Guest: Read, Write, Create
 ```
 1. Create **Module** under your Frapp app
 2. Create **DocType** to store web form data under the related module
 3. Create **WebForm** linked with the created DocType and Module above
+4. Input data via WebForm web page or via REST API (Guest is allowed due to permission settings)
+```shell
+curl -X POST https://<DOMAIN/api/resource/Web%20Form%20Data \
+     -H 'Content-Type: application/json'                    \
+     -H 'Accept: application/json'                          \
+     -d '{"first_name":"Guest", "last_name":"Test", "email":"guest.test@example.com", "comments":"Hello World"}'
+```
 
 <br>
 
