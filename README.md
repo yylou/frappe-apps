@@ -5,6 +5,7 @@
 
 
 <br>
+<br>
 
 <a name="basic-usage"/>
 
@@ -27,6 +28,7 @@ bench --site      <SITE_NAME>           \
 ```
 
 <br>
+<br>
 
 <a name="web-form"/>
 
@@ -48,12 +50,13 @@ DocType = Guest: Read, Write, Create
 3. Create **WebForm** linked with the created DocType and Module above
 4. Input data via WebForm web page or via REST API (Guest is allowed due to permission settings)
 ```shell
-curl -X POST https://<DOMAIN/api/resource/Web%20Form%20Data \
-     -H 'Content-Type: application/json'                    \
-     -H 'Accept: application/json'                          \
+curl -X POST https://<DOMAIN/api/resource/Web%20Form%20Data    \
+     -H 'Content-Type: application/json'                       \
+     -H 'Accept: application/json'                             \
      -d '{"first_name":"Guest", "last_name":"Test", "email":"guest.test@example.com", "comments":"Hello World"}'
 ```
 
+<br>
 <br>
 
 <a name="custom-web-form"/>
