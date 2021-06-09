@@ -240,7 +240,7 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 
 <a name="admin-lte"/>
 
-## AdminLTE Integration
+## AdminLTE Integration with Frappe Framework
 1. Git clone [ColorlibHQ/AdminLTE](https://github.com/ColorlibHQ/AdminLTE) into **['frappe_apps/public'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/public)** folder
 2. Move **'dist'** and **'plugin'** folder out of the repository to **['frappe_apps/public'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/public)** folder
 3. Move **'pages'** folder and **'index\*.html** out of the repository into **['frappe_apps/www'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/www)** folder
