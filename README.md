@@ -259,3 +259,24 @@ sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/in
 sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
 sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pages/widgets.html
 ```
+6. To enable Frappe feature in AdminLTE template, add following contents into the HTML file
+```HTML
+<!-- Add Frappe-related Script inside 'head' tag -->
+<script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+     frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+    window.show_language_picker = {{ show_language_picker }};
+    window.is_chat_enabled = {{ chat_enable }};
+</script>
+
+<!-- Add Frappe-related Script inside 'body' tag -->
+<script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
+{%- for link in web_include_js %}
+<script type="text/javascript" src="{{ link | abs_url }}?ver={{ build_version }}"></script>
+{%- endfor -%}
+```
