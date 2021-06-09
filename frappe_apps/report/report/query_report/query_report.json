@@ -1,0 +1,89 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "ID",
+   "width": 0
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "width": 0
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "width": 0
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "width": 0
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "width": 0
+  },
+  {
+   "fieldname": "creation",
+   "fieldtype": "Data",
+   "label": "Creation",
+   "width": 0
+  }
+ ],
+ "creation": "2021-06-09 16:24:45.489096",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-06-09 16:31:21.375220",
+ "modified_by": "Administrator",
+ "module": "report",
+ "name": "Query Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT    \n    `tabWeb Form Data`.name       AS  \"ID:Data:300\",\n    `tabWeb Form Data`.first_name AS  \"First Name:Data:100\",\n    `tabWeb Form Data`.last_name  AS  \"Last Name:Data:100\",\n    `tabWeb Form Data`.company    AS  \"Company:Data:200\",\n    `tabWeb Form Data`.email      AS  \"Email:Data:300\",\n    `tabWeb Form Data`.creation   AS  \"Creation:Datetime:200\"\nFROM\n    `tabWeb Form Data`\nWHERE\n    `tabWeb Form Data`.creation between %(from_date)s and %(to_date)s\nAND `tabWeb Form Data`.first_name = IFNULL(%(first_name)s,`tabWeb Form Data`.first_name)\nORDER BY\n    `tabWeb Form Data`.creation",
+ "ref_doctype": "Web Form Data",
+ "report_name": "Query Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Guest"
+  }
+ ]
+}
