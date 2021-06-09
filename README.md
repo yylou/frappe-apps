@@ -289,3 +289,4 @@ sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pa
       {%- endfor -%}
 </body>
 ```
+7. Based on Frappe framework, using Jinja, client-side (Javascript), and server-side (Python) to develop your website
