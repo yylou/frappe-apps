@@ -131,8 +131,8 @@ Report  = Query Report       (Folder: frappe_apps/report/report/query_report)
 4. Create Javascript, for filtering purpose
 ```Javascript
 /*
- *  @path    : frappe_apps/report/report/query_report
- *  @filename: query_report.js
+ *  @path      frappe_apps/report/report/query_report
+ *  @filename  query_report.js
  */ 
 
 frappe.query_reports['Query Report'] = {
