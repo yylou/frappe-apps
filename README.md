@@ -1,9 +1,7 @@
 # Frappe Apps Development
 This repository aims at providing general usage of Frappe framework and general steps to build Frappe Apps
 
-<br>
-
-#### Table of Content
+#### ----- Table of Content -----
 [Basic Usage (Frappe Bench)](#basic-usage)  
 [WebForm and DocType](#web-form)  
 [Custom WebForm](#custom-web-form)  
