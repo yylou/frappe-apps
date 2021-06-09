@@ -41,10 +41,10 @@ bench --site      <SITE_NAME>           \
 ## WebForm and DocType
 ```INI
 # ==================================================================================
-#  General Settings                        (refer to JSON file for more details)   =
+#  Reference Settings                      (refer to JSON file for more details)   =
 # ==================================================================================
-
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
+
 [Module] web-form            (Folder: frappe_apps/web_form)
 
 [Type]
@@ -55,7 +55,7 @@ WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
 DocType = Guest: Read, Write, Create
 ```
 1. Create **'Module'** under your Frapp app
-2. Create **'DocType'** to store web form data under the related module
+2. Create **'DocType'** to store web form data under the related module ([JSON](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/web_form/doctype/web_form_data/web_form_data.json))
 ```INI
 [Fileds]
 /-----------------------------------------------------------------\
@@ -70,10 +70,29 @@ DocType = Guest: Read, Write, Create
 |  Comments     |  Data        |  comments    |  Yes              |
 \-----------------------------------------------------------------/
 ```
-3. Create **'WebForm'** linked with the DocType and Module above
+3. Create **'WebForm'** linked with the DocType and Module above ([JSON](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/web_form/web_form/web_form/web_form.json))
+```INI
+[Fileds]
+/-----------------------------------------------------------------\
+|       Fieldname       |        Fieldtype        |     Label     |
+|-----------------------------------------------------------------|
+|  first_name           |  Data                   |  First Name   |
+|  last_name            |  Data                   |  Last Name    |
+|                       |  Column Break           |               |
+|  email                |  Data                   |  Email        |
+|  phone                |  Data                   |  Phone        |
+|                       |  Section Break          |               |
+|  company              |  Data                   |  Company      |
+|                       |  Column Break           |               |
+|  job_title            |  Data                   |  Job Title    |
+|                       |  Section Break          |               |
+|  comments             |  Text Editor            |  Comments     |
+\-----------------------------------------------------------------/
+```
 4. Input data via WebForm web page or via REST API (Guest is allowed due to permission settings)
 ```shell
 # URL Format: <DOMAIN>/api/resource/<DOCTYPE>
+
 curl -X POST https://<DOMAIN>/api/resource/Web%20Form%20Data    \
      -H 'Content-Type: application/json'                       \
      -H 'Accept: application/json'                             \
@@ -93,7 +112,7 @@ Javascript = custom_web_form.js     (Folder: frappe_apps/www)
 Python     = custom_web_form.py     (Folder: frappe_apps/www)
 ```
 1. Create HTML, Javascript (client-side), and Python (server-side) files under **'www'** folder
-2. Design 'Form' in HTML, Front-end reactions in Javascript, and Back-end response in Python
+2. Design 'Form' in [HTML](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/custom-web-form.html), Front-end reactions in [Javascript](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/custom_web_form.js), and Back-end response in [Python](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/custom_web_form.py)
 
 <br>
 <br>
@@ -107,7 +126,7 @@ HTML       = retrieve-data.html     (Folder: frappe_apps/www)
 Python     = retrieve_data.py       (Folder: frappe_apps/www)
 ```
 1. Create HTML and Python (server-side) files under **'www'** folder
-2. Design 'Table' in HTML and Back-end response in Python (here we get Frappe data by **'frappe.get_list'**)
+2. Design 'Table' in [HTML](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/retrieve-data.html) and Back-end response in [Python](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/retrieve_data.py) (here we get Frappe data by **'frappe.get_list'**)
 
 <br>
 <br>
@@ -117,10 +136,10 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 ## Report: Query Report
 ```INI
 # ==================================================================================
-#  General Settings                        (refer to JSON file for more details)   =
+#  Reference Settings                      (refer to JSON file for more details)   =
 # ==================================================================================
-
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
+
 [DocType] Web Form Data        (Folder: frappe_apps/web_form/doctype/web_form_data)
 [Module]  report               (Folder: frappe_apps/report)
 
@@ -131,7 +150,7 @@ Report  = Query Report         (Folder: frappe_apps/report/report/query_report)
 Javascript = query_report.js   (Folder: frappe_apps/report/report/query_report)
 ```
 1. Create **'Module'** under your Frapp app
-2. Create **'Report'** linked with the DocType and Module above
+2. Create **'Report'** linked with the DocType and Module above ([JSON](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/query_report/query_report.json))
 3. Add required information in the **'Columns'** and **'Filters'** sections (referred to following table content)
 ```INI
 [Columns]
@@ -155,7 +174,7 @@ Javascript = query_report.js   (Folder: frappe_apps/report/report/query_report)
 |  first_name     |  First Name |  Data           |
 \-------------------------------------------------/
 ```
-4. Create Javascript, for filtering purpose
+4. Create [Javascript](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/query_report/query_report.js), for filtering purpose
 ```Javascript
 /*
  *  @path      frappe_apps/report/report/query_report
@@ -197,10 +216,10 @@ frappe.query_reports['Query Report'] = {
 ## Report: Script Report
 ```INI
 # ==================================================================================
-#  General Settings                        (refer to JSON file for more details)   =
+#  Reference Settings                      (refer to JSON file for more details)   =
 # ==================================================================================
-
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
+
 [DocType] Web Form Data        (Folder: frappe_apps/web_form/doctype/web_form_data)
 [Module]  report               (Folder: frappe_apps/report)
 
@@ -211,6 +230,6 @@ Report  = Script Report        (Folder: frappe_apps/report/report/script_report)
 Javascript = script_report.js  (Folder: frappe_apps/report/report/script_report)
 Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 ```
-1. Create **'Report'** linked with the DocType and Module (.js and .py will be generated automatically)
-2. Modify **'script_report.js'** to enable filtering functions so that server-side script (Python) could catch it
-3. Modify **'script_report.py'** to deal with table format and how filtering functinos work and response to client-side
+1. Create **'Report'** linked with the DocType and Module (.js and .py will be generated automatically) ([JSON](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/script_report/script_report.json))
+2. Modify **['script_report.js'](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/script_report/script_report.js)** to enable filtering functions so that server-side script (Python) could catch it
+3. Modify **['script_report.py'](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/script_report/script_report.py)** to deal with table format and how filtering functinos work and response to client-side
