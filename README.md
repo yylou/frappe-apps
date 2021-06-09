@@ -259,7 +259,7 @@ sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/in
 sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
 sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pages/widgets.html
 
-# In the repository, we DO NOT MODIFY all connected files, so there must be bugs inside
+# In the repository, we DO NOT MODIFY ALL connected files, so there must be bugs inside
 ```
 6. To prevent duplicated index page, rename index.html to any other naming
 7. To enable Frappe-powered features in AdminLTE template, add following contents into HTML files
@@ -292,4 +292,5 @@ sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pa
       {%- endfor -%}
 </body>
 ```
-8. Based on Frappe, using ```Jinja```, ```client-side (Javascript)```, and ```server-side (Python)``` to design websites
+8. Based on Frappe, using ```Jinja```, ```Client-side (Javascript)```, and ```Server-side (Python)``` to design websites
+9. Check **[AdminLTE-Frappe-Template]**() for more reference about the integration
