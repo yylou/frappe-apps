@@ -5,7 +5,7 @@
  */
 
  
- frappe.query_reports['Qu Report'] = {
+ frappe.query_reports['Query Report'] = {
     "filters": [
         {
             'fieldname':    'from_date',
