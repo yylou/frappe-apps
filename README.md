@@ -8,6 +8,7 @@ This repository aims at providing general usage of Frappe framework and general 
 [Custom Page to Retrieve DocType Data](#custom-page)  
 [Report: Query Report](#query-report)  
 [Report: Script Report](#script-report)  
+[AdminLTE Integration](#admin-lte)  
 
 
 <br>
@@ -233,3 +234,12 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 1. Create **'Report'** linked with the DocType and Module (.js and .py will be generated automatically) ([JSON](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/script_report/script_report.json))
 2. Modify **['script_report.js'](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/script_report/script_report.js)** to enable filtering functions so that server-side script (Python) could catch it
 3. Modify **['script_report.py'](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/report/report/script_report/script_report.py)** to deal with table format and how filtering functinos work and response to client-side
+
+<br>
+<br>
+
+<a name="admin-lte"/>
+
+## AdminLTE Integration
+* Git Repository: [ColorlibHQ/AdminLTE](https://github.com/ColorlibHQ/AdminLTE)
+1. 
