@@ -36,8 +36,11 @@ bench --site      <SITE_NAME>           \
 <a name="web-form"/>
 
 ## WebForm and DocType
-(Related settings could be referred to this repository)
 ```INI
+# ==================================================================================
+#  General Settings  (refer to JSON file for more information)                     =
+# ==================================================================================
+
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
 [Module] web-form            (Folder: frappe_apps/web_form)
 
@@ -96,6 +99,10 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 
 ## Report: Query Report
 ```INI
+# ==================================================================================
+#  General Settings  (refer to JSON file for more information)                     =
+# ==================================================================================
+
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
 [Doctype] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
 [Module]  report             (Folder: frappe_apps/report)
@@ -161,3 +168,10 @@ frappe.query_reports['Query Report'] = {
     ]
 }
 ```
+
+<br>
+<br>
+
+<a name="script-report"/>
+
+## Report: Script Report
