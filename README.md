@@ -242,4 +242,16 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 
 ## AdminLTE Integration
 * Git Repository: [ColorlibHQ/AdminLTE](https://github.com/ColorlibHQ/AdminLTE)
-1. 
+1. Git clone the above repository into **['frappe_apps/frappe_apps/public'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/public)** folder
+2. Move **'dist'** and **'plugin'** folder out of the repository
+3. Move **'pages'** folder and **'index\*.html** out of the repository into **['frappe_apps/www'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/www)** folder
+4. Do ```sed``` on HTML files to modify the location of CSS and Javascript files
+```shell
+# Example 'sed' Commands
+
+sed -i 's/"plugins\//"\/assets\/frappe_apps\/plugins\//' frappe_apps/www/index.html
+sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//' frappe_apps/www/index.html
+
+sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//' frappe_apps/www/pages/widgets.html
+ed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//' frappe_apps/www/pages/widgets.html
+```
