@@ -89,8 +89,8 @@ curl -X POST https://<DOMAIN>/api/resource/Web%20Form%20Data    \
 ```INI
 [File] 
 HTML       = custom-web-form.html   (Folder: frappe_apps/www)
-Python     = custom_web_form.py     (Folder: frappe_apps/www)
 Javascript = custom_web_form.js     (Folder: frappe_apps/www)
+Python     = custom_web_form.py     (Folder: frappe_apps/www)
 ```
 1. Create HTML, Javascript (client-side), and Python (server-side) files under **'www'** folder
 2. Design 'Form' in HTML, Front-end reactions in Javascript, and Back-end response in Python
@@ -121,7 +121,7 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 # ==================================================================================
 
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
-[Doctype] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
+[DocType] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
 [Module]  report             (Folder: frappe_apps/report)
 
 [Type]
@@ -198,11 +198,16 @@ frappe.query_reports['Query Report'] = {
 # ==================================================================================
 
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
-[Doctype] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
-[Module]  report             (Folder: frappe_apps/report)
+[DocType] Web Form Data        (Folder: frappe_apps/web_form/doctype/web_form_data)
+[Module]  report               (Folder: frappe_apps/report)
 
 [Type]
-Report  = Script Report      (Folder: frappe_apps/report/report/script_report)
+Report  = Script Report        (Folder: frappe_apps/report/report/script_report)
+
+[File]
+Javascript = script_report.js  (Folder: frappe_apps/report/report/script_report)
+Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 ```
 1. Create **'Report'** linked with the DocType and Module (.js and .py will be generated automatically)
 2. Modify **'script_report.js'** to enable filtering functions so that server-side script (Python) could catch it
+3. Modify **'script_report.py'** to deal with table format and how filtering functinos work and response to client-side
