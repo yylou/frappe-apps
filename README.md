@@ -45,9 +45,9 @@ WebForm = Web Form           (Folder: frappe_apps/web_form/web_form/web_form)
 [Permission]
 DocType = Guest: Read, Write, Create
 ```
-1. Create **Module** under your Frapp app
-2. Create **DocType** to store web form data under the related module
-3. Create **WebForm** linked with the created DocType and Module above
+1. Create **'Module'** under your Frapp app
+2. Create **'DocType'** to store web form data under the related module
+3. Create **'WebForm'** linked with the created DocType and Module above
 4. Input data via WebForm web page or via REST API (Guest is allowed due to permission settings)
 ```shell
 # URL Format: <DOMAIN>/api/resource/<DOCTYPE>
@@ -63,3 +63,11 @@ curl -X POST https://<DOMAIN>/api/resource/Web%20Form%20Data    \
 <a name="custom-web-form"/>
 
 ## Custom WebForm
+```INI
+[File] 
+HTML       = custom-web-form.html   (Folder: frappe_apps/www)
+Python     = custom-web-form.py     (Folder: frappe_apps/www)
+Javascript = custom-web-form.js     (Folder: frappe_apps/www)
+```
+1. Create HTML, Javascript (client-side), and Python (server-side) files under **'www'** folder
+2. Design 'Form' in HTML, Front-end reactions in Javascript, and Back-end response in Python
