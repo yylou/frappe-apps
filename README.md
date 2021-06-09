@@ -245,8 +245,10 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 2. Move **'dist'** and **'plugin'** folder out of the repository to **['frappe_apps/public'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/public)** folder
 3. Move **'pages'** folder and **'index\*.html** out of the repository into **['frappe_apps/www'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/www)** folder
 4. Remove AdminLTE repository from this Frappe App repository
-5. Do ```sed``` on HTML files to modify the location of CSS and Javascript files
+5. Do ```sed``` on HTML files to modify the reference location of CSS and Javascript files
 ```shell
+# In the repository, we DO NOT MODIFY ALL connected files, so there must be bugs inside
+#
 # 'sed' Command Format: sed -i 's/<ORIGINAL_WORD>/<MODIFIED_WORD>/ <APP_NAME>/www/<HTML_FILE>'
 
 # ORIGINAL_WORD = "plugins\/
@@ -258,8 +260,6 @@ sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/in
 
 sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
 sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pages/widgets.html
-
-# In the repository, we DO NOT MODIFY ALL connected files, so there must be bugs inside
 ```
 6. To prevent duplicated index page, rename index.html to any other naming
 7. To enable Frappe-powered features in AdminLTE template, add following contents into HTML files
