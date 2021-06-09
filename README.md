@@ -3,6 +3,8 @@
 [WebForm and DocType](#web-form)  
 [Custom WebForm](#custom-web-form)  
 [Custom Page to Retrieve DocType Data](#custom-page)  
+[Report: Query Report](#query-report)  
+[Report: Script Report](#script-report)  
 
 
 <br>
@@ -86,3 +88,86 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 ```
 1. Create HTML and Python (server-side) files under **'www'** folder
 2. Design 'Table' in HTML and Back-end response in Python (here we get Frappe data by **'frappe.get_list'**)
+
+<br>
+<br>
+
+<a name="query-report"/>
+
+## Report: Query Report
+```INI
+# Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
+[Doctype] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
+[Module]  report             (Folder: frappe_apps/report)
+
+[Type]
+Report  = Query Report       (Folder: frappe_apps/report/report/query_report)
+```
+1. Create **'Module'** under your Frapp app
+2. Create **'Report'** linked with DocType and Module above
+3. Add required information in the **'Filters'** and **'Columns'**
+```json
+"columns": [
+      {
+            "fieldname": "id",
+            "fieldtype": "Data",
+            "label": "ID",
+            "width": 0
+      },
+      {
+            "fieldname": "first_name",
+            "fieldtype": "Data",
+            "label": "First Name",
+            "width": 0
+      },
+      {
+            "fieldname": "last_name",
+            "fieldtype": "Data",
+            "label": "Last Name",
+            "width": 0
+      },
+      {
+            "fieldname": "email",
+            "fieldtype": "Data",
+            "label": "Email",
+            "width": 0
+      },
+      {
+            "fieldname": "phone",
+            "fieldtype": "Data",
+            "label": "Phone",
+            "width": 0
+      },
+      {
+            "fieldname": "creation",
+            "fieldtype": "Data",
+            "label": "Creation",
+            "width": 0
+      }
+],
+
+"filters": [
+      {
+            "fieldname": "from_date",
+            "fieldtype": "Date",
+            "label": "From",
+            "mandatory": 0,
+            "wildcard_filter": 0
+      },
+      {
+            "fieldname": "to_date",
+            "fieldtype": "Date",
+            "label": "To",
+            "mandatory": 0,
+            "wildcard_filter": 0
+      },
+      {
+            "fieldname": "first_name",
+            "fieldtype": "Data",
+            "label": "First Name",
+            "mandatory": 0,
+            "wildcard_filter": 0
+      }
+ ],
+```
+4. 
