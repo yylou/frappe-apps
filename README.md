@@ -1,5 +1,5 @@
 # Frappe Apps Development
-This repository aims at providing general usage of Frappe framework and general steps to build Frappe Apps
+This repository aims at providing general usage of Frappe framework and general steps to build Frappe Apps.
 
 #### ----- Table of Content -----
 [Basic Usage (Frappe Bench)](#basic-usage)  
@@ -56,7 +56,21 @@ DocType = Guest: Read, Write, Create
 ```
 1. Create **'Module'** under your Frapp app
 2. Create **'DocType'** to store web form data under the related module
-3. Create **'WebForm'** linked with the created DocType and Module above
+```INI
+[Fileds]
+/-----------------------------------------------------------------\
+|     Label     |     Type     |     Name     |     Mandatory     |
+|-----------------------------------------------------------------|
+|  First Name   |  Data        |  first_name  |  Yes              |
+|  Last Name    |  Data        |  last_name   |  Yes              |
+|  Phone        |  Data        |  phone       |                   |
+|  Email        |  Data        |  email       |  Yes              |
+|  Company      |  Data        |  company     |                   |
+|  Job Title    |  Data        |  job_title   |                   |
+|  Comments     |  Data        |  comments    |  Yes              |
+\-----------------------------------------------------------------/
+```
+3. Create **'WebForm'** linked with the DocType and Module above
 4. Input data via WebForm web page or via REST API (Guest is allowed due to permission settings)
 ```shell
 # URL Format: <DOMAIN>/api/resource/<DOCTYPE>
@@ -114,10 +128,10 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 Report  = Query Report       (Folder: frappe_apps/report/report/query_report)
 ```
 1. Create **'Module'** under your Frapp app
-2. Create **'Report'** linked with DocType and Module above
-3. Add required information in the **'Filters'** and **'Columns'** sections (referred to following table content)
+2. Create **'Report'** linked with the DocType and Module above
+3. Add required information in the **'Columns'** and **'Filters'** sections (referred to following table content)
 ```INI
-[columns]
+[Columns]
 /-------------------------------------------------\
 |    Fieldname    |    Label    |    Fieldtype    |
 |-------------------------------------------------|
@@ -129,7 +143,7 @@ Report  = Query Report       (Folder: frappe_apps/report/report/query_report)
 |  creation       |  Creation   |  Data           |
 \-------------------------------------------------/
 
-[filters]
+[Filters]
 /-------------------------------------------------\
 |    Fieldname    |    Label    |    Fieldtype    |
 |-------------------------------------------------|
@@ -190,3 +204,5 @@ frappe.query_reports['Query Report'] = {
 [Type]
 Report  = Script Report      (Folder: frappe_apps/report/report/script_report)
 ```
+1. Create **'Report'** linked with the DocType and Module (.js and .py will be generated automatically)
+2. Modify **'script_report.js'** to enable filtering functions so that server-side script (Python) could catch it
