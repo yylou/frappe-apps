@@ -38,7 +38,7 @@ bench --site      <SITE_NAME>           \
 ## WebForm and DocType
 ```INI
 # ==================================================================================
-#  General Settings  (refer to JSON file for more information)                     =
+#  General Settings                        (refer to JSON file for more details)   =
 # ==================================================================================
 
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
@@ -100,7 +100,7 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 ## Report: Query Report
 ```INI
 # ==================================================================================
-#  General Settings  (refer to JSON file for more information)                     =
+#  General Settings                        (refer to JSON file for more details)   =
 # ==================================================================================
 
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
@@ -175,3 +175,15 @@ frappe.query_reports['Query Report'] = {
 <a name="script-report"/>
 
 ## Report: Script Report
+```INI
+# ==================================================================================
+#  General Settings                        (refer to JSON file for more details)   =
+# ==================================================================================
+
+# Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
+[Doctype] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
+[Module]  report             (Folder: frappe_apps/report)
+
+[Type]
+Report  = Script Report      (Folder: frappe_apps/report/report/script_report)
+```
