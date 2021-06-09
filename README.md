@@ -121,11 +121,14 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 # ==================================================================================
 
 # Folder Structure: APP_NAME/MODULE_NAME/TYPE/NAME
-[DocType] Web Form Data      (Folder: frappe_apps/web_form/doctype/web_form_data)
-[Module]  report             (Folder: frappe_apps/report)
+[DocType] Web Form Data        (Folder: frappe_apps/web_form/doctype/web_form_data)
+[Module]  report               (Folder: frappe_apps/report)
 
 [Type]
-Report  = Query Report       (Folder: frappe_apps/report/report/query_report)
+Report  = Query Report         (Folder: frappe_apps/report/report/query_report)
+
+[File]
+Javascript = query_report.js   (Folder: frappe_apps/report/report/query_report)
 ```
 1. Create **'Module'** under your Frapp app
 2. Create **'Report'** linked with the DocType and Module above
