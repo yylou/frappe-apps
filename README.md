@@ -247,9 +247,13 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 4. Remove AdminLTE repository from this Frappe App repository
 5. Do ```sed``` on HTML files to modify the location of CSS and Javascript files
 ```shell
-# Example 'sed' Commands
+# 'sed' Command Format: sed -i 's/<ORIGINAL_WORD>/<MODIFIED_WORD>/ <APP_NAME>/www/<HTML_FILE>'
 
+# ORIGINAL_WORD = "plugins\/
+# MODIFIED_WORD = "\/assets\/frappe_apps\/plugins\/
 sed -i 's/"plugins\//"\/assets\/frappe_apps\/plugins\//'      frappe_apps/www/index.html
+# ORIGINAL_WORD = "dist\/
+# MODIFIED_WORD = "\/assets\/frappe_apps\/dist\/
 sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/index.html
 
 sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
