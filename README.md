@@ -293,4 +293,4 @@ sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pa
 </body>
 ```
 8. Based on Frappe, using ```Jinja```, ```Client-side (Javascript)```, and ```Server-side (Python)``` to design websites
-9. Check **[AdminLTE-Frappe-Template]**() for more reference about the integration
+9. Check **[AdminLTE-Frappe Template]**(https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/template.html) and **[AdminLTE-Frappe Example]**(https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/example.html) for more reference about the integration
