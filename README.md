@@ -105,69 +105,54 @@ Report  = Query Report       (Folder: frappe_apps/report/report/query_report)
 ```
 1. Create **'Module'** under your Frapp app
 2. Create **'Report'** linked with DocType and Module above
-3. Add required information in the **'Filters'** and **'Columns'**
-```json
-"columns": [
-      {
-            "fieldname": "id",
-            "fieldtype": "Data",
-            "label": "ID",
-            "width": 0
-      },
-      {
-            "fieldname": "first_name",
-            "fieldtype": "Data",
-            "label": "First Name",
-            "width": 0
-      },
-      {
-            "fieldname": "last_name",
-            "fieldtype": "Data",
-            "label": "Last Name",
-            "width": 0
-      },
-      {
-            "fieldname": "email",
-            "fieldtype": "Data",
-            "label": "Email",
-            "width": 0
-      },
-      {
-            "fieldname": "phone",
-            "fieldtype": "Data",
-            "label": "Phone",
-            "width": 0
-      },
-      {
-            "fieldname": "creation",
-            "fieldtype": "Data",
-            "label": "Creation",
-            "width": 0
-      }
-],
+3. Add required information in the **'Filters'** and **'Columns'** sections (referred to following table content)
+```INI
+[columns]
+/-------------------------------------------------\
+|    Fieldname    |    Label    |    Fieldtype    |
+|-------------------------------------------------|
+|  id             |  ID         |  Data           |
+|  first_name     |  First Name |  Data           |
+|  last_name      |  Last Name  |  Data           |
+|  email          |  Email      |  Data           |
+|  phone          |  Phone      |  Data           |
+|  creation       |  Creation   |  Data           |
+\-------------------------------------------------/
 
-"filters": [
-      {
-            "fieldname": "from_date",
-            "fieldtype": "Date",
-            "label": "From",
-            "mandatory": 0,
-            "wildcard_filter": 0
-      },
-      {
-            "fieldname": "to_date",
-            "fieldtype": "Date",
-            "label": "To",
-            "mandatory": 0,
-            "wildcard_filter": 0
-      },
-      {
-            "fieldname": "first_name",
-            "fieldtype": "Data",
-            "label": "First Name",
-            "mandatory": 0,
-            "wildcard_filter": 0
-      }
- ],
+[filters]
+/-------------------------------------------------\
+|    Fieldname    |    Label    |    Fieldtype    |
+|-------------------------------------------------|
+|  from_date      |  From       |  Date           |
+|  to_date        |  To         |  Date           |
+|  first_name     |  First Name |  Data           |
+\-------------------------------------------------/
 ```
-4. 
+4. Create Javascript for filtering purpose
+```Javascript
+frappe.query_reports['Query Report'] = {
+    "filters": [
+        {
+            'fieldname':    'from_date',
+            'label':        __( 'From' ),
+            'fieldtype':    'Date',
+	        'default':      '2021-01-01',
+            'reqd':         1
+        },
+        {
+            'fieldname':    'to_date',
+            'label':        __( 'To' ),
+            'fieldtype':    'Date',
+	        'default':      get_today(),
+            'reqd':         1
+        },
+        {
+            'fieldname':    'first_name',
+            'label':        __( 'First Name' ),
+            'fieldtype':    'Data',
+	        'default':      '%',
+            'reqd':         1
+        },
+    ]
+}
+```
