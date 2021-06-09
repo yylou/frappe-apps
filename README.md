@@ -249,9 +249,9 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 ```shell
 # Example 'sed' Commands
 
-sed -i 's/"plugins\//"\/assets\/frappe_apps\/plugins\//' frappe_apps/www/index.html
-sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//' frappe_apps/www/index.html
+sed -i 's/"plugins\//"\/assets\/frappe_apps\/plugins\//'      frappe_apps/www/index.html
+sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/index.html
 
-sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//' frappe_apps/www/pages/widgets.html
-ed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//' frappe_apps/www/pages/widgets.html
+sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
+sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pages/widgets.html
 ```
