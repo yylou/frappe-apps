@@ -141,21 +141,21 @@ frappe.query_reports['Query Report'] = {
             'fieldname':    'from_date',
             'label':        __( 'From' ),
             'fieldtype':    'Date',
-	        'default':      '2021-01-01',
+	      'default':      '2021-01-01',
             'reqd':         1
         },
         {
             'fieldname':    'to_date',
             'label':        __( 'To' ),
             'fieldtype':    'Date',
-	        'default':      get_today(),
+	      'default':      get_today(),
             'reqd':         1
         },
         {
             'fieldname':    'first_name',
             'label':        __( 'First Name' ),
             'fieldtype':    'Data',
-	        'default':      '%',
+	      'default':      '%',
             'reqd':         1
         },
     ]
