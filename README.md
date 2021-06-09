@@ -259,7 +259,7 @@ sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/in
 sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
 sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pages/widgets.html
 ```
-6. To enable Frappe feature in AdminLTE template, add following contents into HTML files
+6. To enable Frappe-powered features in AdminLTE template, add following contents into HTML files
 ```HTML
 <!-- Add Frappe-related Script inside 'head' tag -->
 <head>
