@@ -25,6 +25,18 @@
   <link rel="stylesheet" href="/assets/frappe_apps/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="/assets/frappe_apps/plugins/summernote/summernote-bs4.min.css">
+
+  <script>
+    window.frappe = {};
+    frappe.ready_events = [];
+    frappe.ready = function(fn) {
+     frappe.ready_events.push(fn);
+    }
+    window.dev_server = {{ dev_server }};
+    window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+    window.show_language_picker = {{ show_language_picker }};
+    window.is_chat_enabled = {{ chat_enable }};
+  </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -1502,5 +1514,11 @@
 <script src="/assets/frappe_apps/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/assets/frappe_apps/dist/js/pages/dashboard.js"></script>
+
+<!-- Frappe-related Script -->
+<script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
+{%- for link in web_include_js %}
+<script type="text/javascript" src="{{ link | abs_url }}?ver={{ build_version }}"></script>
+{%- endfor -%}
 </body>
 </html>
