@@ -138,6 +138,8 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 <a name="query-report"/>
 
 ## Report: Query Report
+![demo-query-report](demo-pic/query-report.png)
+
 ```INI
 # ==================================================================================
 #  Reference Settings                      (refer to JSON file for more details)   =
@@ -218,6 +220,8 @@ frappe.query_reports['Query Report'] = {
 <a name="script-report"/>
 
 ## Report: Script Report
+![demo-script-report](demo-pic/script-report.png)
+
 ```INI
 # ==================================================================================
 #  Reference Settings                      (refer to JSON file for more details)   =
