@@ -37,6 +37,8 @@ bench --site      <SITE_NAME>           \
 <a name="web-form"/>
 
 ## WebForm and DocType
+![demo-web-form](demo-pic/web-form.png)
+
 ```INI
 # ==================================================================================
 #  Reference Settings                      (refer to JSON file for more details)   =
