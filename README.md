@@ -105,6 +105,8 @@ curl -X POST https://<DOMAIN>/api/resource/Web%20Form%20Data    \
 <a name="custom-web-form"/>
 
 ## Custom WebForm
+![demo-custom-web-form](demo-pic/custom-web-form.png)
+
 ```INI
 [File] 
 HTML       = custom-web-form.html   (Folder: frappe_apps/www)
@@ -120,6 +122,8 @@ Python     = custom_web_form.py     (Folder: frappe_apps/www)
 <a name="custom-page"/>
 
 ## Custom Page to Retrieve DocType Data
+![demo-retrieve-data](demo-pic/retrieve-data.gif)
+
 ```INI
 [File] 
 HTML       = retrieve-data.html     (Folder: frappe_apps/www)
