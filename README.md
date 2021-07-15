@@ -276,7 +276,7 @@ npm install
         "integrate:frappe": "node scripts/integrate-frappe.js"
     },
 ```
-6. Modify source files (website-design-related files) to include static files (assets, css, and javascripts) with new paths. In this tutorial, we modify ```src/pug/index.pug```, ```src/scss/sections/_cta.scss```, and ```src/scss/sections/_masthead``` (Click each link and check the modifications). For example:
+6. Modify source files (website-design-related files) to include static files (assets, css, and javascripts) with new paths. In this tutorial, we modify ```src/pug/index.pug```, ```src/scss/sections/_cta.scss```, and ```src/scss/sections/_masthead``` (Click each link to check the modifications). For example:
 ```pug
 // Favicon
 link(rel='icon', type='image/x-icon', href='/assets/frappe_apps/bootstrap-5/favicon.ico')
@@ -290,4 +290,11 @@ link(href='/assets/frappe_apps/bootstrap-5/css/styles.css', rel='stylesheet')
 //- img.img-fluid(src='assets/img/portfolio-1.jpg', alt='...')
 img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-1.jpg', alt='...')
 ```
-7. 
+7. Build the app
+```shell
+bench build --app frappe_apps
+```
+or simply
+```shell
+npm run build
+```
