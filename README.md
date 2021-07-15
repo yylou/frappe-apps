@@ -292,6 +292,6 @@ img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-1.jpg', alt='..
 ```
 7. Build the app
 ```shell
-# Frappe command 'bench build' will execute 'npm run build' in each Frappe app's folder
+# Frappe command 'bench build' will execute 'npm run build' for each Frappe app with package.json
 bench build --app frappe_apps
 ```
