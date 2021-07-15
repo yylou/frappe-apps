@@ -261,4 +261,19 @@ rm -rf startbootstrap-stylish-portfolio
 npm install
 ```
 5. Write Javascript for npm-build process and integration with Frappe framework
-https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17
+[Reference Code](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17)
+```json
+    "scripts": {
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run integrate:clean && npm run integrate:frappe",
+        "build:assets": "node scripts/build-assets.js",
+        "build:pug": "node scripts/build-pug.js",
+        "build:scripts": "node scripts/build-scripts.js",
+        "build:scss": "node scripts/build-scss.js",
+        "clean": "node scripts/clean.js",
+        "start": "npm run build && node scripts/start.js",
+        "start:debug": "npm run build && node scripts/start-debug.js",
+
+        "integrate:clean": "node scripts/integrate-clean.js",
+        "integrate:frappe": "node scripts/integrate-frappe.js"
+    },
+```
