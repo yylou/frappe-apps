@@ -4,3 +4,4 @@
 *.swp
 tags
 frappe_apps/docs/current
+node_modules

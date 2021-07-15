@@ -1,0 +1,180 @@
+doctype html
+html(lang='en')
+
+    head
+
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description' content='')
+        meta(name='author' content='')
+
+        title Routing with Intelligence | IoT Eye Inc.
+
+        // Favicon
+        link(rel='icon', type='image/x-icon', href='/assets/frappe_apps/bootstrap-5/favicon.ico')
+        //- link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
+
+        // Font Awesome icons (free version)
+        script(src='https://use.fontawesome.com/releases/v5.15.3/js/all.js', crossorigin='anonymous')
+
+        // Simple line icons
+        link(href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css', rel='stylesheet')
+
+        // Google fonts
+        link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css')
+
+        // Core theme CSS (includes Bootstrap)
+        link(href='/assets/frappe_apps/bootstrap-5/css/styles.css', rel='stylesheet')
+        //- link(href='css/styles.css', rel='stylesheet')
+
+    body#page-top
+
+        // Navigation
+        a.menu-toggle.rounded(href='#')
+            i.fas.fa-bars
+        nav#sidebar-wrapper
+            ul.sidebar-nav
+                li.sidebar-brand
+                    a(href='#page-top') IoT Eye Inc.
+                li.sidebar-nav-item
+                    a(href='#page-top') Home
+                li.sidebar-nav-item
+                    a(href='#about') About
+                li.sidebar-nav-item
+                    a(href='#services') Services
+                li.sidebar-nav-item
+                    a(href='#portfolio') Portfolio
+                li.sidebar-nav-item
+                    a(href='#contact') Contact
+
+        // Header
+        header.masthead.d-flex.align-items-center
+            .container.px-4.px-lg-5.text-center
+                h1.mb-1 IoT Eye Inc.
+                h3.mb-5
+                    em Intelligent Routing Made Easy
+                a.btn.btn-primary.btn-xl(href='#about') Find Out More
+
+        // About
+        section#about.content-section.bg-light
+            .container.px-4.px-lg-5.text-center
+                .row.gx-4.gx-lg-5.justify-content-center
+                    .col-lg-10
+                        h2 We are IoTeye!
+                        p.lead.mb-5
+                            | We are a remote software products company. For over 5 years we've been actively building and sharing high quality special care products and tools
+                        a.btn.btn-dark.btn-xl(href='#services') What We Offer
+
+        // Services
+        section#services.content-section.bg-primary.text-white.text-center
+            .container.px-4.px-lg-5
+                .content-section-heading
+                    h3.text-secondary.mb-0 Services
+                    h2.mb-5 What We Offer
+                .row.gx-4.gx-lg-5
+                    .col-lg-3.col-md-6.mb-5.mb-lg-0
+                        span.service-icon.rounded-circle.mx-auto.mb-3
+                            i.icon-screen-smartphone
+                        h4
+                            strong Project Management
+                    .col-lg-3.col-md-6.mb-5.mb-lg-0
+                        span.service-icon.rounded-circle.mx-auto.mb-3
+                            i.icon-pencil
+                        h4
+                            strong Outdoors Checkup
+                    .col-lg-3.col-md-6.mb-5.mb-md-0
+                        span.service-icon.rounded-circle.mx-auto.mb-3
+                            i.icon-like
+                        h4
+                            strong Help Desk
+                    .col-lg-3.col-md-6
+                        span.service-icon.rounded-circle.mx-auto.mb-3
+                            i.icon-mustache
+                        h4
+                            strong Time Tracking
+
+        // Callout
+        section.callout
+            .container.px-4.px-lg-5.text-center
+                h2.mx-auto.mb-5 Find our about our Solutions
+                a.btn.btn-primary.btn-xl(href='https://startbootstrap.com/theme/stylish-portfolio/') Learn More!
+
+        // Portfolio
+        section#portfolio.content-section
+            .container.px-4.px-lg-5
+                .content-section-heading.text-center
+                    h3.text-secondary.mb-0 Portfolio
+                    h2.mb-5 Recent Projects
+                .row.gx-0
+                    .col-lg-6
+                        a.portfolio-item(href='#!')
+                            .caption
+                                .caption-content
+                                    .h2 Services
+                                    p.mb-0 A yellow pencil with envelopes on a clean, blue backdrop!
+                            //- img.img-fluid(src='assets/img/portfolio-1.jpg', alt='...')
+                            img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-1.jpg', alt='...')
+                    .col-lg-6
+                        a.portfolio-item(href='#!')
+                            .caption
+                                .caption-content
+                                    .h2 Special Care
+                                    p.mb-0 A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!
+                            //- img.img-fluid(src='assets/img/portfolio-2.jpg', alt='...')
+                            img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-2.jpg', alt='...')
+                    .col-lg-6
+                        a.portfolio-item(href='#!')
+                            .caption
+                                .caption-content
+                                    .h2 Art Studio
+                                    p.mb-0 Strawberries are such a tasty snack, especially with a little sugar on top!
+                            //- img.img-fluid(src='assets/img/portfolio-3.jpg', alt='...')
+                            img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-3.jpg', alt='...')
+                    .col-lg-6
+                        a.portfolio-item(href='#!')
+                            .caption
+                                .caption-content
+                                    .h2 Cram School
+                                    p.mb-0 A yellow workspace with some scissors, pencils, and other objects.
+                            //- img.img-fluid(src='assets/img/portfolio-4.jpg', alt='...')
+                            img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-4.jpg', alt='...')
+
+        // Call to Action
+        section.content-section.bg-primary.text-white
+            .container.px-4.px-lg-5.text-center
+                h2.mb-4 The buttons below are impossible to resist...
+                a.btn.btn-xl.btn-light.me-4(href='#!') Click Me!
+                a.btn.btn-xl.btn-dark(href='#!') Look at Me!
+
+        // Map
+        #contact.map
+            iframe(src='https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&aq=0&oq=twitter&sll=28.659344,-81.187888&sspn=0.128789,0.264187&ie=UTF8&hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&t=m&z=15&iwloc=A&output=embed')
+            br
+            small
+                a(href='https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&aq=0&oq=twitter&sll=28.659344,-81.187888&sspn=0.128789,0.264187&ie=UTF8&hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&t=m&z=15&iwloc=A')
+
+        // Footer
+        footer.footer.text-center
+            .container.px-4.px-lg-5
+                ul.list-inline.mb-5
+                    li.list-inline-item
+                        a.social-link.rounded-circle.text-white.mr-3(href='#!')
+                            i.icon-social-facebook
+                    li.list-inline-item
+                        a.social-link.rounded-circle.text-white.mr-3(href='#!')
+                            i.icon-social-twitter
+                    li.list-inline-item
+                        a.social-link.rounded-circle.text-white(href='#!')
+                            i.icon-social-github
+                p.text-muted.small.mb-0 Copyright &copy; Your Website 2021
+
+        // Scroll to Top Button
+        a.scroll-to-top.rounded(href='#page-top')
+            i.fas.fa-angle-up
+
+        // Bootstrap core JS
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js')
+
+        // Core theme JS
+        script(src='/assets/frappe_apps/bootstrap-5/js/scripts.js')
+        //- script(src='js/scripts.js')
