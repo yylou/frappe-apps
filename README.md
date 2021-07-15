@@ -260,7 +260,7 @@ rm -rf startbootstrap-stylish-portfolio
 ```
 npm install
 ```
-5. Modify npm package file ```package.json``` for npm-build process and integration with Frappe framework. ([Reference Code](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17))
+5. Modify npm package file ```package.json``` for npm-build process and integration with Frappe framework. [(Reference Code)](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17))
 ```json
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run integrate:clean && npm run integrate:frappe",
@@ -276,3 +276,18 @@ npm install
         "integrate:frappe": "node scripts/integrate-frappe.js"
     },
 ```
+6. Modify source files (website-design-related files) to include static files (assets, css, and javascripts) with new paths. In this tutorial, we modify ```src/pug/index.pug```, ```src/scss/sections/_cta.scss```, and ```src/scss/sections/_masthead``` (Click each link and check the modifications). For example:
+```pug
+// Favicon
+link(rel='icon', type='image/x-icon', href='/assets/frappe_apps/bootstrap-5/favicon.ico')
+//- link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
+
+// Core theme CSS (includes Bootstrap)
+link(href='/assets/frappe_apps/bootstrap-5/css/styles.css', rel='stylesheet')
+//- link(href='css/styles.css', rel='stylesheet')
+
+// Portfolio
+//- img.img-fluid(src='assets/img/portfolio-1.jpg', alt='...')
+img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-1.jpg', alt='...')
+```
+7. 
