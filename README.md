@@ -256,7 +256,9 @@ mv startbootstrap-stylish-portfolio/{src,scripts,*.json} .
 ```shell
 rm -rf startbootstrap-stylish-portfolio
 ```
-4. Install NodeJS modules
+4. Install Node modules
 ```
 npm install
 ```
+5. Write Javascript for npm-build process and integration with Frappe framework
+https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17
