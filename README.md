@@ -260,8 +260,7 @@ rm -rf startbootstrap-stylish-portfolio
 ```
 npm install
 ```
-5. Write Javascript for npm-build process and integration with Frappe framework
-[Reference Code](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17)
+5. Write Javascript for npm-build process and integration with Frappe framework. ([Reference Code](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17))
 ```json
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run integrate:clean && npm run integrate:frappe",
