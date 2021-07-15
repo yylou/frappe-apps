@@ -247,8 +247,8 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 <a name="bootstrap-5"/>
 
 ## Integration - Bootstrap 5
-1. Clone Bootstrap 5 GitHub Repository (Here we take [Stylish Portfolio](https://github.com/StartBootstrap/startbootstrap-stylish-portfolio) for example)
-2. Move out necessary files
+1. Clone Bootstrap 5 GitHub Repository (Here we take [Stylish Portfolio](https://github.com/StartBootstrap/startbootstrap-stylish-portfolio) as example for tutorial)
+2. Move out necessary files, including source files, npm-build scripts, and npm package file.
 ```shell
 mv startbootstrap-stylish-portfolio/{src,scripts,*.json} .
 ```
