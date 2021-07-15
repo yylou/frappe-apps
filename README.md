@@ -6,7 +6,7 @@ This repository aims at providing general usage of Frappe framework and steps to
 * [Custom Page to Retrieve DocType Data](#custom-page)  
 * [Report: Query Report](#query-report)  
 * [Report: Script Report](#script-report)  
-* [Bootstrap 5 Integration](#bootstrap-5)  
+* [Integration - Bootstrap 5](#bootstrap-5)  
 
 <br>
 
@@ -246,7 +246,7 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 
 <a name="bootstrap-5"/>
 
-## Bootstrap 5 Integration
+## Integration - Bootstrap 5
 1. Clone Bootstrap 5 GitHub Repository (Here we take [Stylish Portfolio](https://github.com/StartBootstrap/startbootstrap-stylish-portfolio) for example)
 2. Move out necessary files
 ```shell
