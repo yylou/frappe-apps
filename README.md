@@ -1,13 +1,13 @@
 # Frappe Apps Development
 This repository aims at providing general usage of Frappe framework and steps to build Frappe Apps.
 
-[Basic Usage (Frappe Bench)](#basic-usage)  
-[WebForm and DocType](#web-form)  
-[Custom WebForm](#custom-web-form)  
-[Custom Page to Retrieve DocType Data](#custom-page)  
-[Report: Query Report](#query-report)  
-[Report: Script Report](#script-report)  
-[AdminLTE Integration](#admin-lte)  
+* [Basic Usage (Frappe Bench)](#basic-usage)  
+* [WebForm and DocType](#web-form)  
+* [Custom WebForm](#custom-web-form)  
+* [Custom Page to Retrieve DocType Data](#custom-page)  
+* [Report: Query Report](#query-report)  
+* [Report: Script Report](#script-report)  
+* [Bootstrap-5 Integration](#bootstrap-5)  
 
 <br>
 
@@ -245,59 +245,11 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 <br>
 <br>
 
-<a name="admin-lte"/>
+<a name="bootstrap-5"/>
 
-## AdminLTE Integration with Frappe Framework
-1. Git clone [ColorlibHQ/AdminLTE](https://github.com/ColorlibHQ/AdminLTE) into **['frappe_apps/public'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/public)** folder
-2. Move **'dist'** and **'plugin'** folder out of the repository to **['frappe_apps/public'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/public)** folder
-3. Move **'pages'** folder and **'index\*.html** out of the repository into **['frappe_apps/www'](https://github.com/yylou/frappe-apps/tree/main/frappe_apps/www)** folder
-4. Remove AdminLTE repository from this Frappe App repository
-5. Do ```sed``` on HTML files to modify the reference location of CSS and Javascript files
+## Bootstrap 5
+1. Clone Bootstrap 5 GitHub Repository (Here we take [Stylish Portfolio](https://github.com/StartBootstrap/startbootstrap-stylish-portfolio) for example)
+2. Move out necessary files
 ```shell
-# In the repository, we DO NOT MODIFY ALL connected files, so there must be bugs inside
-#
-# 'sed' Command Format: sed -i 's/<ORIGINAL_WORD>/<MODIFIED_WORD>/ <APP_NAME>/www/<HTML_FILE>'
-
-# ORIGINAL_WORD = "plugins\/
-# MODIFIED_WORD = "\/assets\/frappe_apps\/plugins\/
-sed -i 's/"plugins\//"\/assets\/frappe_apps\/plugins\//'      frappe_apps/www/index.html
-# ORIGINAL_WORD = "dist\/
-# MODIFIED_WORD = "\/assets\/frappe_apps\/dist\/
-sed -i 's/"dist\//"\/assets\/frappe_apps\/dist\//'            frappe_apps/www/index.html
-
-sed -i 's/"..\/plugins\//"\/assets\/frappe_apps\/plugins\//'  frappe_apps/www/pages/widgets.html
-sed -i 's/"..\/dist\//"\/assets\/frappe_apps\/dist\//'        frappe_apps/www/pages/widgets.html
+mv startbootstrap-stylish-portfolio/{src,scripts,*.json} .
 ```
-6. To prevent duplicated index page, rename index.html to any other naming
-7. To enable Frappe-powered features in AdminLTE template, add following contents into HTML files
-```HTML
-<!-- Add Frappe-related Script inside 'head' tag -->
-<head>
-      ...
-
-      <script>
-      window.frappe = {};
-      frappe.ready_events = [];
-      frappe.ready = function(fn) {
-      frappe.ready_events.push(fn);
-      }
-      window.dev_server = {{ dev_server }};
-      window.socketio_port = {{ (frappe.socketio_port or 'null') }};
-      window.show_language_picker = {{ show_language_picker }};
-      window.is_chat_enabled = {{ chat_enable }};
-      </script>
-</head>
-
-
-<!-- Add Frappe-related Script inside 'body' tag -->
-<body>
-      ...
-
-      <script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
-      {%- for link in web_include_js %}
-      <script type="text/javascript" src="{{ link | abs_url }}?ver={{ build_version }}"></script>
-      {%- endfor -%}
-</body>
-```
-8. Based on Frappe, using ```Jinja```, ```Client-side (Javascript)```, and ```Server-side (Python)``` to design websites
-9. Check **[AdminLTE-Frappe Template](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/template.html)** and **[AdminLTE-Frappe Example](https://github.com/yylou/frappe-apps/blob/main/frappe_apps/www/example.html)** for more reference about the integration
