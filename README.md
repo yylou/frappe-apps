@@ -1,6 +1,6 @@
 # Frappe Apps Development
 This repository aims at providing general usage of Frappe framework and steps to build Frappe Apps.
-* [Basic Usage (Frappe Bench)](#basic-usage)  
+* [Basic Usage of Frappe Bench](#basic-usage)  
 * [WebForm and DocType](#web-form)  
 * [Custom WebForm](#custom-web-form)  
 * [Custom Page to Retrieve DocType Data](#custom-page)  
@@ -12,7 +12,7 @@ This repository aims at providing general usage of Frappe framework and steps to
 
 <a name="basic-usage"/>
 
-## Basic Usage (Frappe Bench)
+## Basic Usage of Frappe Bench
 ```shell
 # Create New Frappe App / Get Existing Frappe App
 bench new-app     <APP_NAME>
