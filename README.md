@@ -249,6 +249,9 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 ## Integration - Bootstrap 5
 ![demo-script-report](demo-pic/integration-bootstrap5.gif)
 1. Clone Bootstrap 5 GitHub Repository (Here we take [Stylish Portfolio](https://github.com/StartBootstrap/startbootstrap-stylish-portfolio) as example for tutorial)
+```shell
+git clone https://github.com/StartBootstrap/startbootstrap-stylish-portfolio.git
+```
 2. Move out necessary files such as **source files, npm-build scripts, and npm package file**
 ```shell
 mv startbootstrap-stylish-portfolio/{src,scripts,*.json} .
@@ -326,6 +329,9 @@ bench build --app frappe_apps
 
 ## Integration - AdminLTE v3
 1. Clone [AdminLTE v3](https://github.com/ColorlibHQ/AdminLTE/tree/master) GitHub Repository
+```shell
+git clone https://github.com/StartBootstrap/startbootstrap-stylish-portfolio.git
+```
 2. Move out necessary files such as **source files (website-design-related files) and npm package file**
 ```shell
 mv AdminLTE/{package*,build}    .
