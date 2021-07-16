@@ -336,7 +336,7 @@ git clone https://github.com/StartBootstrap/startbootstrap-stylish-portfolio.git
 ```shell
 mv AdminLTE/{package*,build}    .
 mv AdminLTE/dist/img            ioteye_web/public/
-mv AdminLTE/index.html          frappe_apps/www/admin-lte.html
+mv AdminLTE/index.html          frappe_apps/www/admin.html
 ```
 3. Remove redundant files
 ```shell
@@ -392,9 +392,9 @@ npm install
 ```
 6. Modify ```ioteye_web/www/admin.html``` to include static files (assets, css, and javascripts) with new paths.
 ```shell
-sed -i "" 's/\"dist\/img\//\"\/assets\/ioteye_web\/img\//'               ioteye_web/www/admin-lte.html
-sed -i "" 's/\"plugins\//\"\/assets\/ioteye_web\/admin-lte\/plugins\//'  ioteye_web/www/admin-lte.html
-sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'              ioteye_web/www/admin-lte.html
+sed -i "" 's/\"dist\/img\//\"\/assets\/ioteye_web\/img\//'               ioteye_web/www/admin.html
+sed -i "" 's/\"plugins\//\"\/assets\/ioteye_web\/admin-lte\/plugins\//'  ioteye_web/www/admin.html
+sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'              ioteye_web/www/admin.html
 ```
 7. To enable Frappe-powered features, add following contents into HTML file
 ```html
