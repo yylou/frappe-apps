@@ -1,13 +1,17 @@
 # Frappe Apps Development
 This repository aims at providing general usage of Frappe framework and steps to build Frappe Apps.
-* [Basic - Usage of Frappe Bench](#basic-usage)  
-* [Web - WebForm and DocType](#web-form)  
-* [Web - Custom WebForm](#custom-web-form)  
-* [Web - Custom Page to Retrieve DocType Data](#custom-page)  
-* [Report - Query Type](#query-report)  
-* [Report - Script Type](#script-report)  
-* [Integration - Bootstrap 5](#bootstrap-5)  
-* [Integration - AdminLTE v3](#admin-lte)
+* Basic
+  * [Usage of Frappe Bench](#basic-usage)  
+* Web
+  * [WebForm and DocType](#web-form)  
+  * [Custom WebForm](#custom-web-form)  
+  * [Custom Page to Retrieve DocType Data](#custom-page)  
+* Report
+  * [Query Type](#query-report)  
+  * [Script Type](#script-report)  
+* Integration
+  * [Bootstrap 5](#bootstrap-5)  
+  * [AdminLTE v3](#admin-lte)
 
 <br>
 
