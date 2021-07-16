@@ -249,7 +249,7 @@ Python     = script_report.py  (Folder: frappe_apps/report/report/script_report)
 ## Integration - Bootstrap 5
 ![demo-script-report](demo-pic/integration-bootstrap5.gif)
 1. Clone Bootstrap 5 GitHub Repository (Here we take [Stylish Portfolio](https://github.com/StartBootstrap/startbootstrap-stylish-portfolio) as example for tutorial)
-2. Move out necessary files such as **source files, npm-build scripts, and npm package file**.
+2. Move out necessary files such as **source files, npm-build scripts, and npm package file**
 ```shell
 mv startbootstrap-stylish-portfolio/{src,scripts,*.json} .
 ```
@@ -261,7 +261,7 @@ rm -rf startbootstrap-stylish-portfolio
 ```
 npm install
 ```
-5. Modify npm package file ```package.json``` for **npm-build process and integration with Frappe framework**. [(Reference Code)](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17)
+5. Modify npm package file ```package.json``` for **npm-build process and integration with Frappe framework** [(Reference Code)](https://github.com/yylou/frappe-apps/blob/3d6930864a535ade469cab2a095fb5eeb588cb68/package.json#L5-L17)
 ```json
     "scripts": {
         "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run integrate:clean && npm run integrate:frappe",
@@ -325,8 +325,8 @@ bench build --app frappe_apps
 <a name="admin-lte"/>
 
 ## Integration - AdminLTE v3
-1. Clone [AdminLTE v3](https://github.com/ColorlibHQ/AdminLTE/tree/master) GitHub Repository.
-2. Move out necessary files such as **source files ((website-design-related files)) and npm package file**.
+1. Clone [AdminLTE v3](https://github.com/ColorlibHQ/AdminLTE/tree/master) GitHub Repository
+2. Move out necessary files such as **source files (website-design-related files) and npm package file**
 ```shell
 mv AdminLTE/{package*,build} .
 mv AdminLTE/index.html frappe_apps/www/
