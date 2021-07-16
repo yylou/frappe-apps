@@ -291,8 +291,55 @@ link(href='/assets/frappe_apps/bootstrap-5/css/styles.css', rel='stylesheet')
 //- img.img-fluid(src='assets/img/portfolio-1.jpg', alt='...')
 img.img-fluid(src='/assets/frappe_apps/bootstrap-5/img/portfolio-1.jpg', alt='...')
 ```
-7. Build the app
+7. To enable Frappe-powered features, add following contents into PUG file [```src/png/index.png```](https://github.com/yylou/frappe-apps/blob/main/src/pug/index.pug)
+```pug
+head
+    // Frappe Integration
+    script.
+        window.frappe = {};
+        frappe.ready_events = [];
+        frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+        }
+        window.dev_server = {{ dev_server }};
+        window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+        window.show_language_picker = {{ show_language_picker }};
+        window.is_chat_enabled = {{ chat_enable }};
+
+body#page-top
+    // Frappe Integration
+    script(type='text/javascript', src='/assets/js/frappe-web.min.js?ver={{ build_version }}')
+    |       {%- for link in web_include_js %}
+    script(type='text/javascript', src='{{ link | abs_url }}?ver={{ build_version }}')
+    |       {%- endfor -%}
+```
+8. Build the app
 ```shell
 # Frappe command 'bench build' will execute 'npm run build' for each Frappe app with package.json
 bench build --app frappe_apps
+```
+
+<br>
+<br>
+
+<a name="admin-lte"/>
+
+## Integration - AdminLTE v3
+1. Clone [AdminLTE v3](https://github.com/ColorlibHQ/AdminLTE/tree/master) GitHub Repository.
+2. Move out necessary files such as **source files ((website-design-related files)) and npm package file**.
+```shell
+mv AdminLTE/{package*,build} .
+mv AdminLTE/index.html frappe_apps/www/
+```
+3. Remove redundant files
+```shell
+rm -rf AdminLTE
+```
+4. Install Node modules
+```shell
+npm install
+```
+5. Modify npm package file package.json for npm-build process and integration with Frappe framework.
+```json
+
 ```
