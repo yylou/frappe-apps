@@ -385,16 +385,16 @@ npm install
         "watch-css": "nodemon --watch build/scss -e scss -x \"npm-run-all css-lint css\"",
         "watch-js": "nodemon --watch build/js -e js -x \"npm-run-all js-lint js\"",
 
+        "build": "npm run production && npm run integrate-clean && npm run integrate-frappe",
         "integrate-clean": "rm -rf ioteye_web/public/admin-lte",
-        "integrate-frappe": "mv dist ioteye_web/public/admin-lte && mv plugins ioteye_web/public/admin-lte/ && rm -rf dist plugins",
-        "build": "npm run production && npm run integrate-clean && npm run integrate-frappe"
+        "integrate-frappe": "mv dist ioteye_web/public/admin-lte && mv plugins ioteye_web/public/admin-lte/ && rm -rf dist plugins"
     },
 ```
 6. Modify ```ioteye_web/www/admin.html``` to include static files (assets, css, and javascripts) with new paths.
 ```shell
-sed -i "" 's/\"dist\/img\//\"\/assets\/ioteye_web\/img\//'                  ioteye_web/www/admin-lte.html
-sed -i "" 's/\"plugins\//\"\/assets\/ioteye_web\/admin-lte\/plugins\//'     ioteye_web/www/admin-lte.html
-sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'                 ioteye_web/www/admin-lte.html
+sed -i "" 's/\"dist\/img\//\"\/assets\/ioteye_web\/img\//'               ioteye_web/www/admin-lte.html
+sed -i "" 's/\"plugins\//\"\/assets\/ioteye_web\/admin-lte\/plugins\//'  ioteye_web/www/admin-lte.html
+sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'              ioteye_web/www/admin-lte.html
 ```
 7. To enable Frappe-powered features, add following contents into HTML file
 ```html
