@@ -1,11 +1,11 @@
 # Frappe Apps Development
 This repository aims at providing general usage of Frappe framework and steps to build Frappe Apps.
-* [Basic Usage of Frappe Bench](#basic-usage)  
-* [WebForm and DocType](#web-form)  
-* [Custom WebForm](#custom-web-form)  
-* [Custom Page to Retrieve DocType Data](#custom-page)  
-* [Report: Query Report](#query-report)  
-* [Report: Script Report](#script-report)  
+* [Basic - Usage of Frappe Bench](#basic-usage)  
+* [Web - WebForm and DocType](#web-form)  
+* [Web - Custom WebForm](#custom-web-form)  
+* [Web - Custom Page to Retrieve DocType Data](#custom-page)  
+* [Report - Query Type](#query-report)  
+* [Report - Script Type](#script-report)  
 * [Integration - Bootstrap 5](#bootstrap-5)  
 * [Integration - AdminLTE v3](#admin-lte)
 
@@ -13,7 +13,7 @@ This repository aims at providing general usage of Frappe framework and steps to
 
 <a name="basic-usage"/>
 
-## Basic Usage of Frappe Bench
+## Basic - Usage of Frappe Bench
 ```shell
 # Create New Frappe App / Get Existing Frappe App
 bench new-app     <APP_NAME>
@@ -36,7 +36,7 @@ bench --site      <SITE_NAME>           \
 
 <a name="web-form"/>
 
-## WebForm and DocType
+## Web - WebForm and DocType
 ![demo-web-form](demo-pic/web-form.png)
 
 ```INI
@@ -104,7 +104,7 @@ curl -X POST https://<DOMAIN>/api/resource/Web%20Form%20Data    \
 
 <a name="custom-web-form"/>
 
-## Custom WebForm
+## Web - Custom WebForm
 ![demo-custom-web-form](demo-pic/custom-web-form.png)
 
 ```INI
@@ -121,7 +121,7 @@ Python     = custom_web_form.py     (Folder: frappe_apps/www)
 
 <a name="custom-page"/>
 
-## Custom Page to Retrieve DocType Data
+## Web - Custom Page to Retrieve DocType Data
 ![demo-retrieve-data](demo-pic/retrieve-data.gif)
 
 ```INI
@@ -137,7 +137,7 @@ Python     = retrieve_data.py       (Folder: frappe_apps/www)
 
 <a name="query-report"/>
 
-## Report: Query Report
+## Report - Query Type
 ![demo-query-report](demo-pic/query-report.png)
 
 ```INI
@@ -219,7 +219,7 @@ frappe.query_reports['Query Report'] = {
 
 <a name="script-report"/>
 
-## Report: Script Report
+## Report - Script Type
 ![demo-script-report](demo-pic/script-report.png)
 
 ```INI
