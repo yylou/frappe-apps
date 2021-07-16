@@ -328,8 +328,9 @@ bench build --app frappe_apps
 1. Clone [AdminLTE v3](https://github.com/ColorlibHQ/AdminLTE/tree/master) GitHub Repository
 2. Move out necessary files such as **source files (website-design-related files) and npm package file**
 ```shell
-mv AdminLTE/{package*,build} .
-mv AdminLTE/index.html frappe_apps/www/
+mv AdminLTE/{package*,build}    .
+mv AdminLTE/dist/img            ioteye_web/public/
+mv AdminLTE/index.html          frappe_apps/www/admin-lte.html
 ```
 3. Remove redundant files
 ```shell
@@ -339,7 +340,88 @@ rm -rf AdminLTE
 ```shell
 npm install
 ```
-5. Modify npm package file package.json for npm-build process and integration with Frappe framework.
+5. Modify npm package file ```package.json``` for **npm-build process and integration with Frappe framework**.
 ```json
+    "scripts": {
+        "bundlewatch": "bundlewatch --config .bundlewatch.config.json",
+        "css": "npm-run-all css-compile css-prefix css-minify",
+        "css-splits": "npm-run-all css-compile-splits css-prefix-splits css-minify-splits",
+        "css-all": "npm-run-all --parallel css css-splits",
+        "css-compile-bash": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js --output-style expanded --source-map true --source-map-contents true --precision 6 ",
+        "css-compile": "npm run css-compile-bash -- build/scss/adminlte.scss dist/css/adminlte.css",
+        "css-compile-splits": "npm run css-compile-bash -- build/scss/parts -o dist/css/alt/",
+        "css-prefix": "postcss --config build/config/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+        "css-prefix-splits": "postcss --config build/config/postcss.config.js --replace \"dist/css/alt/*.css\" \"!dist/css/alt/*.min.css\"",
+        "css-minify-bash": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output ",
+        "css-minify": "npm run css-minify-bash -- dist/css/ --batch --batch-suffix \".min\" \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+        "css-minify-splits": "npm run css-minify-bash -- dist/css/alt/ --batch --batch-suffix \".min\" \"dist/css/alt/*.css\" \"!dist/css/alt/*.min.css\"",
+        "css-lint": "stylelint \"build/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+        "compile": "npm-run-all --parallel js css-all",
+        "dev": "npm-run-all --parallel watch sync",
+        "docs": "npm-run-all docs-prepare docs-compile",
+        "docs-lint": "node build/npm/vnu-jar.js",
+        "docs-compile": "cd docs/ && bundle exec jekyll build -d ../docs_html",
+        "docs-serve": "npm-run-all compile docs-prepare && cd docs/ && bundle exec jekyll serve",
+        "docs-prepare": "node build/npm/DocsPublish.js -v",
+        "lockfile-lint": "lockfile-lint --allowed-hosts npm --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
+        "postinstall": "npm run plugins",
+        "js": "npm-run-all js-compile js-minify",
+        "js-compile": "rollup --config build/config/rollup.config.js --sourcemap",
+        "js-minify": "terser --compress typeofs=false --mangle --comments \"/^!/\" --source-map \"content=dist/js/adminlte.js.map,includeSources,url=adminlte.min.js.map\" --output dist/js/adminlte.min.js dist/js/adminlte.js",
+        "js-lint": "eslint --cache --cache-location .cache/.eslintcache --report-unused-disable-directives .",
+        "lint": "npm-run-all --continue-on-error --parallel css-lint js-lint lockfile-lint",
+        "production": "npm-run-all --parallel compile plugins",
+        "prepare-release": "npm-run-all production docs",
+        "test": "npm-run-all lint production",
+        "plugins": "node build/npm/Publish.js -v",
+        "sync": "browser-sync start --server --files *.html pages/ dist/",
+        "watch": "concurrently \"npm run watch-css\" \"npm run watch-js\"",
+        "watch-css": "nodemon --watch build/scss -e scss -x \"npm-run-all css-lint css\"",
+        "watch-js": "nodemon --watch build/js -e js -x \"npm-run-all js-lint js\"",
 
+        "integrate-clean": "rm -rf ioteye_web/public/admin-lte",
+        "integrate-frappe": "mv dist ioteye_web/public/admin-lte && mv plugins ioteye_web/public/admin-lte/ && rm -rf dist plugins",
+        "build": "npm run production && npm run integrate-clean && npm run integrate-frappe"
+    },
+```
+6. Modify ```ioteye_web/www/admin.html``` to include static files (assets, css, and javascripts) with new paths.
+```shell
+sed -i "" 's/\"dist\/img\//\"\/assets\/ioteye_web\/img\//'                  ioteye_web/www/admin.html
+sed -i "" 's/\"plugins\//\"\/assets\/ioteye_web\/admin-lte\/plugins\//'     ioteye_web/www/admin.html
+sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'                 ioteye_web/www/admin.html
+```
+7. To enable Frappe-powered features, add following contents into HTML file
+```html
+<!-- Add Frappe-related Script inside 'head' tag -->
+<head>
+    ...
+
+    <script>
+        window.frappe = {};
+        frappe.ready_events = [];
+        frappe.ready = function(fn) {
+            frappe.ready_events.push(fn);
+        }
+        window.dev_server = {{ dev_server }};
+        window.socketio_port = {{ (frappe.socketio_port or 'null') }};
+        window.show_language_picker = {{ show_language_picker }};
+        window.is_chat_enabled = {{ chat_enable }};
+    </script>
+</head>
+
+
+<!-- Add Frappe-related Script inside 'body' tag -->
+<body>
+      ...
+
+      <script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
+      {%- for link in web_include_js %}
+      <script type="text/javascript" src="{{ link | abs_url }}?ver={{ build_version }}"></script>
+      {%- endfor -%}
+</body>
+```
+8. Build the app
+```shell
+# Frappe command 'bench build' will execute 'npm run build' for each Frappe app with package.json
+bench build --app frappe_apps
 ```
