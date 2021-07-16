@@ -398,10 +398,10 @@ sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'              ioteye_
 ```
 7. To enable Frappe-powered features, add following contents into HTML file
 ```html
-<!-- Add Frappe-related Script inside 'head' tag -->
 <head>
     ...
 
+    <!-- Add Frappe-related Script inside 'head' tag -->
     <script>
         window.frappe = {};
         frappe.ready_events = [];
@@ -415,15 +415,14 @@ sed -i "" 's/\"dist\//\"\/assets\/ioteye_web\/admin-lte\//'              ioteye_
     </script>
 </head>
 
-
-<!-- Add Frappe-related Script inside 'body' tag -->
 <body>
-      ...
+    ...
 
-      <script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
-      {%- for link in web_include_js %}
-      <script type="text/javascript" src="{{ link | abs_url }}?ver={{ build_version }}"></script>
-      {%- endfor -%}
+    <!-- Add Frappe-related Script inside 'body' tag -->
+    <script type="text/javascript" src="/assets/js/frappe-web.min.js?ver={{ build_version }}"></script>
+    {%- for link in web_include_js %}
+    <script type="text/javascript" src="{{ link | abs_url }}?ver={{ build_version }}"></script>
+    {%- endfor -%}
 </body>
 ```
 8. Build the app
