@@ -7,6 +7,7 @@ This repository aims at providing general usage of Frappe framework and steps to
 * [Report: Query Report](#query-report)  
 * [Report: Script Report](#script-report)  
 * [Integration - Bootstrap 5](#bootstrap-5)  
+* [Integration - AdminLTE v3](#admin-lte)
 
 <br>
 
