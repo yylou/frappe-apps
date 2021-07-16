@@ -286,7 +286,7 @@ npm install
         "integrate:frappe": "node scripts/integrate-frappe.js"
     },
 ```
-6. Modify source files (website-design-related files) to include static files (assets, css, and javascripts) with new paths. In this tutorial, we modify [```src/pug/index.pug```](https://github.com/yylou/frappe-apps/blob/main/src/pug/index.pug), [```src/scss/sections/_cta.scss```](https://github.com/yylou/frappe-apps/blob/main/src/scss/sections/_cta.scss), and [```src/scss/sections/_masthead```](https://github.com/yylou/frappe-apps/blob/main/src/scss/sections/_masthead.scss) (Click each link to check the modifications). Take ```index.pug``` as example:
+6. ***(Optional)*** Modify source files (website-design-related files) to include static files (assets, css, and javascripts) with new paths. In this tutorial, we modify [```src/pug/index.pug```](https://github.com/yylou/frappe-apps/blob/main/src/pug/index.pug), [```src/scss/sections/_cta.scss```](https://github.com/yylou/frappe-apps/blob/main/src/scss/sections/_cta.scss), and [```src/scss/sections/_masthead```](https://github.com/yylou/frappe-apps/blob/main/src/scss/sections/_masthead.scss) (Click each link to check the modifications). Take ```index.pug``` as example:
 ```pug
 // Favicon
 link(rel='icon', type='image/x-icon', href='/assets/frappe_apps/bootstrap-5/favicon.ico')
@@ -398,7 +398,7 @@ npm install
         "integrate-frappe": "mv dist ioteye_web/public/admin-lte && mv plugins ioteye_web/public/admin-lte/ && rm -rf dist plugins"
     },
 ```
-6. Modify ```ioteye_web/www/admin.html``` to include static files (assets, css, and javascripts) with new paths.
+6. ***(Optional)*** Modify ```ioteye_web/www/admin.html``` to include static files (assets, css, and javascripts) with new paths.
 ```shell
 sed -i "" 's/\"dist\/img\//\"\/assets\/ioteye_web\/img\//'               ioteye_web/www/admin.html
 sed -i "" 's/\"plugins\//\"\/assets\/ioteye_web\/admin-lte\/plugins\//'  ioteye_web/www/admin.html
