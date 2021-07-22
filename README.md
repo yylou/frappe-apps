@@ -343,7 +343,7 @@ git clone https://github.com/ColorlibHQ/AdminLTE.git
 2. Move out necessary files such as **source files (website-design-related files) and npm package file**
 ```shell
 mv AdminLTE/{package*,build}    .
-mv AdminLTE/dist/img            ioteye_web/public/
+mv AdminLTE/dist/img            frappe_apps/public/
 mv AdminLTE/index.html          frappe_apps/www/admin.html
 ```
 3. Remove redundant files
