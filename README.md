@@ -338,7 +338,7 @@ bench build --app frappe_apps
 
 1. Clone [AdminLTE v3](https://github.com/ColorlibHQ/AdminLTE/tree/master) GitHub Repository
 ```shell
-git clone https://github.com/StartBootstrap/startbootstrap-stylish-portfolio.git
+git clone https://github.com/ColorlibHQ/AdminLTE.git
 ```
 2. Move out necessary files such as **source files (website-design-related files) and npm package file**
 ```shell
